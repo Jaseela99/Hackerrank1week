@@ -57,3 +57,38 @@ miniMaxSum(arr)
 ////////////////////////////////////////////////////////////////////////////////
 
 /////////////////day 3
+
+/* Given a time in 12-hour AM/PM format, convert it to military (24-hour) time.
+Note: - 12:00:00AM on a 12-hour clock is 00:00:00 on a 24-hour clock.
+- 12:00:00PM on a 12-hour clock is 12:00:00 on a 24-hour clock. */
+
+let s = '05:01:00PM'
+
+function timeConversion(s) {
+  //only time
+  let time = s.substring(0,8)
+  //am or pm
+  let merediem = s.substring(8)
+  //converting in to array 
+  let array = time.split(":")
+  //if pm 
+  if( merediem ==="PM"){
+    //arr[0]!==12
+    if(array[0]!=="12"){
+      //converted in to number and 12 is added to it
+      array[0]= parseInt(array[0])+12
+    }
+    //am
+  }else{
+    if(array[0]==="12"){
+      //12 is replaced with 00
+      array[0]="00"
+    }
+  }
+  //converted to string without merediem 
+return array.join(":")
+}
+
+console.log(timeConversion(s))
+
+//******************************************************************** */
