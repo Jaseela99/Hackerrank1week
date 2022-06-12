@@ -41,7 +41,7 @@ arr: an array of 5 integers
 Print two space-separated integers on one line: the minimum sum and the maximum sum of  of  elements.
 A single line of five space-separated integers. */
 
-let arr=[1,3,5,9,7]
+/* let arr=[1,3,5,9,7]
   function miniMaxSum(arr) {
     //sort to get increasing order  
 let newArr =arr.sort((a,b)=>  a- b) //bcoz else 1,10, 100 ,2,3  this is the way it sort ,considers only first place of the integer
@@ -53,7 +53,7 @@ console.log(min, max)
 }
 
 miniMaxSum(arr)
-
+ */
 ////////////////////////////////////////////////////////////////////////////////
 
 /////////////////day 3
@@ -92,3 +92,17 @@ return array.join(":")
 console.log(timeConversion(s))
 
 //******************************************************************** */
+//given an arr of odd  number of elements ,find the median
+
+let arr =[1,3,4,7,8]
+
+function findMedian(arr){
+  //sorting
+  let newArr = [...arr].sort((a,b)=> a-b)
+  //its length/2
+  let mid =Math.floor(arr.length/2)
+  //if length is odd  middle num is median,else average of the two middle numbers
+  return arr.length%2 !==0 ? newArr[mid] :(newArr[mid-1]+newArr[mid])/2
+
+}
+console.log(findMedian(arr))
