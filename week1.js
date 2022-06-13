@@ -62,7 +62,7 @@ miniMaxSum(arr)
 Note: - 12:00:00AM on a 12-hour clock is 00:00:00 on a 24-hour clock.
 - 12:00:00PM on a 12-hour clock is 12:00:00 on a 24-hour clock. */
 
-let s = '05:01:00PM'
+/* let s = '05:01:00PM'
 
 function timeConversion(s) {
   //only time
@@ -89,12 +89,12 @@ function timeConversion(s) {
 return array.join(":")
 }
 
-console.log(timeConversion(s))
+console.log(timeConversion(s)) */
 
 //******************************************************************** */
 //given an arr of odd  number of elements ,find the median
 
-let arr =[1,3,4,7,8]
+/* let arr =[1,3,4,7,8]
 
 function findMedian(arr){
   //sorting
@@ -105,4 +105,29 @@ function findMedian(arr){
   return arr.length%2 !==0 ? newArr[mid] :(newArr[mid-1]+newArr[mid])/2
 
 }
-console.log(findMedian(arr))
+console.log(findMedian(arr)) */
+
+//////////////////////////////////////////////////////////////////////////////////////////
+
+//////////////day 4
+
+//Given an array of integers, where all elements but one occur twice, find the unique element.
+let a = [1,2,3,3,2]
+function lonelyinteger(a) {
+  //set 
+let set = new Set()
+//for each elemnt in x , if set has that element it will be deleted and else it will be added
+a.forEach((x)=>set.has(x) ? set.delete(x):set.add(x))
+//converting set in to array and returning the first element
+return Array.from(set)[0]
+
+//!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+// if first index of n =last index then n is found and returned
+//return a.find( n => a.indexOf(n) === a.lastIndexOf(n))
+}
+console.log(lonelyinteger(a))
+
+//***************************************************************************************** */
+
+
+//Given a square matrix, calculate the absolute difference between the sums of its diagonals.
