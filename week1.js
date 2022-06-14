@@ -131,3 +131,24 @@ console.log(lonelyinteger(a))
 
 
 //Given a square matrix, calculate the absolute difference between the sums of its diagonals.
+
+let arr = [[1,2,3],
+           [4,5,6],
+           [7,8,9]]
+
+function diagonalDifference(arr) {
+  //column length
+  let col = arr[0].length //3
+  //left and right diagonal sum
+  let leftSum=0;
+  let rightSum=0;
+  //i =0 to 2 j=2 to 0
+  for(let i=0,j=col-1;i<col;i++,j--){
+      leftSum += arr[i][i] //left diagonal -->[0][0] [1][1] [2][2]
+      rightSum += arr[i][j]//right diagonal -->[2][0] [1][1] [0][2] 
+  }
+  let difference = Math.abs(leftSum-rightSum) //to get positive diff
+   return difference
+        
+        }
+        
