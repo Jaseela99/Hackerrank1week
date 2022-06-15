@@ -132,7 +132,7 @@ console.log(lonelyinteger(a))
 ///day5
 //Given a square matrix, calculate the absolute difference between the sums of its diagonals.
 
-let arr = [[1,2,3],
+/* let arr = [[1,2,3],
            [4,5,6],
            [7,8,9]]
 
@@ -140,7 +140,7 @@ function diagonalDifference(arr) {
 
   //left and right diagonal sum
   let leftSum=0;
-  let rightSum=0;
+  let rightSum=0; */
   
   //!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! up to this common
   /*let col = arr[0].length //3
@@ -152,22 +152,43 @@ function diagonalDifference(arr) {
 
   //************************************************************************** */
 
-  for(let i=0;i<arr.length;i++ ){
+  /* for(let i=0;i<arr.length;i++ ){
     leftSum+= arr[i][i]  
     rightSum+= arr[i][arr.length-1-i] //here col= row  so, j=collength-1 -i
-  }
+  } */
 
   //!!!!!!!!!!!!!!!!!!!!!!!!!!!! after this common
-  let difference = Math.abs(leftSum-rightSum) //to get positive diff
+  /* let difference = Math.abs(leftSum-rightSum) //to get positive diff
    return difference
         
         }
         console.log(diagonalDifference(arr))
 
-
+ */
 
  /////////////////////////////////////////////////////////////////////////////////
+/////day6
+
+
+//counting sort -non comparison sorting
+//for a range k ,arr of size n ; we create a new arr of size k and increment its index w.r.t n sized arr
+//Given a list of integers, count and return the number of times each value appears as an array of integers.
+
+let string ="63 25 73 1 98 73 56 84 86 57 16 83 8 25 81 56 9 53 98 67 99 12 83 89 80 91 39 86 76 85 74 39 25 90 59 10 94 32 44 3 89 30 27 79 46 96 27 32 18 21 92 69 81 40 40 34 68 78 24 87 42 69 23 41 78 22 6 90 99 89 50 30 20 1 43 3 70 95 33 46 44 9 69 48 33 60 65 16 82 67 61 32 21 79 75 75 13 87 70 33"
+let arr = string.split(",")
+
+function countingSort(arr) { 
+  //range =100  so we create a new arr with 0 s as element and length=100
+  let countingArray = Array(100).fill(0)
+  //for every num in arr 
+  for(let num of arr ){
+    //countarray s num increases
+      countingArray[num]++
+  }
+  return countingArray
+
+}
 
 
 
-        
+
