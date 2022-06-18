@@ -189,6 +189,30 @@ function countingSort(arr) {
 
 }
 
+//////////////////////////////////////////////////////////////
+////////day7
+
+/* Given an array of n distinct integers, transform the array into a zig zag sequence by permuting the array elements.
+ A sequence will be called a zig zag sequence if the first k elements in the sequence are in increasing order and the last k elements 
+ are in decreasing order, where k=(n+1/2). You need to find the lexicographically smallest zig zag sequence of the given array.
+ */
 
 
 
+//let an= [2,3,5,1,4]
+
+//*********************************************************** */
+
+/* Two players are playing a game of Tower Breakers! Player 1 always moves first, and both players always play optimally.The rules of the game are as follows:
+Initially there are n towers.
+Each tower is of height m.
+The players move in alternating turns.
+In each turn, a player can choose a tower of height x and reduce its height to y, where 1<=y<x  and  evenly dividesx .
+If the current player is unable to make a move, they lose the game.
+Given the values of n and m, determine which player will win. If the first player wins, return 1. Otherwise, return 2. */
+let n=2
+let m=6
+function towerBreakers(n, m) {
+  if(n%2==0){ return 2 } if(m==1){ return 2 } else{ return 1 }
+
+}
