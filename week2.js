@@ -28,3 +28,29 @@ Caesar's cipher shifts each letter by a number of letters.
     return encrypted
 }
 console.log(caesarCipher(s,k))
+
+////////////////////////////////////////////////////////////////////////
+//////////day2
+/* Given a square grid of characters in the range ascii[a-z], rearrange elements of each row alphabetically, ascending.
+ Determine if the columns are also in ascending alphabetical order, top to bottom. Return YES if they are or NO if they are not */
+
+ let grid =["abc","ade","bdf"]
+ function gridChallenge(grid) {
+    //for every row in grid
+    for (let row in grid) {
+        //sorting every row in grid
+        grid[row] = grid[row].split('').sort().join('');
+    
+        if(row == 0) continue;
+    //for every col in grid rows
+        for (let col in grid[row]) {
+            //comparing cols if they are not ascending return no
+            if (grid[row][col] < grid[row - 1][col]) {
+                return "NO";
+            }
+        }
+    }
+    
+    return "YES";
+}
+console.log(gridChallenge(grid))
