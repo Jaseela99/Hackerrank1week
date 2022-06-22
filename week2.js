@@ -74,3 +74,44 @@ function superDigit(n, k) {
 
 }
 console.log(superDigit(n,k))
+/////////////////////////////////////////////////////////
+/////day4
+/* It is New Year's Day and people are in line for the Wonderland rollercoaster ride.
+ Each person wears a sticker indicating their initial position in the queue from 1 to n.
+  Any person can bribe the person directly in front of them to swap positions, but they still wear their original sticker. 
+One person can bribe at most two others.
+Determine the minimum number of bribes that took place to get to a given queue order.
+ Print the number of bribes, or, if anyone has bribed more than two people, print Too chaotic. */
+ let q=[1,2,3,5,4,6,7,8]
+
+ function minimumBribes(q) {
+    let bribesCount = 0;
+    let i = q.length - 1;
+    //whilelength >=0
+    while (i>=0) {
+        const originalI = q[i] - 1;       //8
+        const differences = originalI - i;//7
+
+        if (differences <= 0) {
+            i--;                 
+            continue;
+        }
+        //more than 2 bribes
+        if (differences > 2) {
+            console.log('Too chaotic');
+            return;
+        }
+
+        bribesCount += differences;
+
+        const temp = q[i];
+        for (let j=0; j<differences; j++) {
+            q[i+j] = q[i+j+1];
+        }
+        q[originalI] = temp;
+    }
+
+    console.log(bribesCount);
+
+}
+console.log(minimumBribes(q))
