@@ -64,3 +64,29 @@ function legoBlocks(n, m) {
 
    return cleanMultiFloor[m] % mod;
 }
+///////////////////////////////////////////////////////
+/////////////////jesse cookies
+let k=9
+let A=[2,3,7,6,4,6]
+
+function cookies(k, A) {
+    let i = 0, j = 0, n = 0, C = []
+
+  A.sort((a, b) => a - b)
+  if (A[0] >= k) return 0
+  if (A.length < 2) return -1
+
+  while (i < A.length || j < C.length - 1) {
+
+    C.push(i >= A.length ? C[j++] + 2 * C[j++] : [1, 2]
+      .map(v => (A[i]<C[j] || j>=C.length) ? v*A[i++] : v*C[j++])
+      .reduce((t, v) => t + v, 0))
+
+    n++
+
+    if ((A[i] >= k || i >= A.length) && C[j] >= k) return n
+  }
+
+  return -1
+
+}
